@@ -11,12 +11,11 @@ interface InvitationData {
 }
 
 const InvitationData: InvitationData = {
-  name: '박정민 신부님 + 김지연 신부님',
-  date: '2023년 10월 14일',
+  name: '강순원 신랑랑님 + 강순원원 신부님',
+  date: '2026년 1월 10일',
   time: '12:00',
   location: '서울 웨딩홀',
   address: '서울특별시 강남구',
-  dressCode: '정장',
 };
 
 export default function InvitationCard() {
@@ -25,7 +24,6 @@ export default function InvitationCard() {
   return (
     <div className="invitation-card">
       <div className="card-header">
-        <div className="card-title">결혼식 초대장</div>
         <button
           className="expand-button"
           onClick={() => setIsExpanded(!isExpanded)}

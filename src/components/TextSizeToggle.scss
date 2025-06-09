@@ -1,0 +1,47 @@
+.text-size-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #f8f9fa;
+    transform: translateY(-1px);
+  }
+
+  .text-icon {
+    width: 1.3em;
+    height: 1.3em;
+  }
+
+  span {
+    margin-left: 0.2em;
+    font-size: 0.9rem;
+  }
+}
+
+.large-text {
+  font-size: 1.2em !important;
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2.4rem !important;
+  }
+
+  h3 {
+    font-size: 1.8rem !important;
+  }
+
+  p {
+    font-size: 1.3rem !important;
+  }
+}
