@@ -120,12 +120,15 @@ interface ImageType {
 }
 
 // Local photobook images
-const sampleImages: ImageType[] = Array.from({ length: 20 }, (_, i) => ({
-  id: i + 1,
-  url: `/images/photobook (${i + 1}).jpg`,
-  alt: `웨딩사진 ${i + 1}`,
-  title: `소중한 추억 ${i + 1}`
-}));
+const sampleImages: ImageType[] = Array.from({ length: 20 }, (_, i) => {
+  const imageNumber = i + 1;
+  return {
+    id: imageNumber,
+    url: `/images/photobook%20(${imageNumber}).jpg`,
+    alt: `Wedding photo ${imageNumber}`,
+    title: `Our Memory #${imageNumber}`
+  };
+});
 
 const PhotoGallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<ImageType | null>(null);
