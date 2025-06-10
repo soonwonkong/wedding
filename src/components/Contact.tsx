@@ -1,48 +1,55 @@
+import { useState } from 'react';
 import './Contact.scss';
 
-interface Contact {
-  name: string;
-  phone: string;
-  email: string;
-}
-
-const contactData = [
-  {
-    name: '신랑',
-    phone: '010-1234-5678',
-    email: 'groom@example.com'
-  },
-  {
-    name: '신부',
-    phone: '010-9876-5432',
-    email: 'bride@example.com'
-  }
-];
-
 export default function Contact() {
+  const [activeContact, setActiveContact] = useState<string | null>(null);
+
+  const toggleContact = (type: string) => {
+    setActiveContact(activeContact === type ? null : type);
+  };
+
+  const renderContactInfo = (type: string, name: string, phone: string) => (
+    <div className={`contact-info ${activeContact === type ? 'active' : ''}`}>
+      <div className="contact-header" onClick={() => toggleContact(type)}>
+        <span className="emoji">
+          {type === 'groom' && '👰‍♂️'}
+          {type === 'bride' && '👰'}
+          {type === 'groom-father' && '👨'}
+          {type === 'groom-mother' && '👩'}
+          {type === 'bride-father' && '👨'}
+          {type === 'bride-mother' && '👩'}
+        </span>
+        <div className="name">
+          {name}
+        </div>
+        <span className="toggle">{activeContact === type ? '▲' : '▼'}</span>
+      </div>
+      {activeContact === type && (
+        <a href={`sms:${phone}`} className="phone">
+          {phone}
+        </a>
+      )}
+    </div>
+  );
+
   return (
-    <div className="contact-section">
-      <h2>연락처</h2>
-      <div className="contact-grid">
-        {contactData.map((contact, index) => (
-          <div key={index} className="contact-card" data-index={index}>
-            <div className="contact-info">
-              <h3>{contact.name}</h3>
-              <div className="contact-item">
-                <span className="contact-label">전화:</span>
-                <a href={`tel:${contact.phone}`} className="contact-link">
-                  {contact.phone}
-                </a>
-              </div>
-              <div className="contact-item">
-                <span className="contact-label">이메일:</span>
-                <a href={`mailto:${contact.email}`} className="contact-link">
-                  {contact.email}
-                </a>
-              </div>
-            </div>
-          </div>
-        ))}
+    <div className="contacts-section">
+      <h2 className="contacts-title">연락처</h2>
+      <p className="contacts-subtitle">축하의 말씀을 전해주세요</p>
+      
+      <div className="contacts-grid">
+        <div className="contact-row">
+          {renderContactInfo('groom', '신랑', '010-7922-2278')}
+          {renderContactInfo('bride', '신부', '010-8803-3899')}
+        </div>
+        <div className="contact-row">
+          {renderContactInfo('groom-father', '신랑 아버지', '010-7922-2278')}
+          {renderContactInfo('bride-father', '신부 아버지', '010-8803-3899')}
+        </div>
+        <div className="contact-row">
+          {renderContactInfo('groom-mother', '신랑 어머니', '010-7922-2278')}
+          {renderContactInfo('bride-mother', '신부 어머니', '010-8803-3899')}
+        </div>
       </div>
     </div>
   );

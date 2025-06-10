@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaMusic, FaPause } from 'react-icons/fa';
 import Couple from './components/Couple';
 import WeddingInfo from './components/WeddingInfo';
-import Gallery from './components/Gallery';
+import PhotoGallery from './components/PhotoGallery';
 import Contact from './components/Contact';
 import CoverImage from './components/CoverImage';
 import InvitationMessage from './components/InvitationMessage';
@@ -52,7 +52,7 @@ function App() {
           <WeddingInfo />
         </div>
         <div className="section">
-          <Gallery />
+          <PhotoGallery />
         </div>
         <div className="section">
           <Contact />

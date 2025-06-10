@@ -1,72 +1,130 @@
-.contact-section {
+.contacts-section {
+  margin: 3rem 0 1.5rem;
+  background: #f8f5f2;
+  border-radius: 16px;
   padding: 4rem 2rem;
-  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s ease forwards;
-
-  h2 {
-    text-align: center;
+  
+  .contacts-title {
     font-size: 2rem;
     color: #2c3e50;
-    margin-bottom: 3rem;
+    text-align: center;
+    margin: 0 0 0.5rem;
+    font-weight: 600;
     font-family: 'Noto Sans KR', sans-serif;
   }
-
-  .contact-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-
-  .contact-card {
-    background: #f8f9fa;
-    border-radius: 10px;
-    padding: 2rem;
+  
+  .contacts-subtitle {
+    color: #8d6e63;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards;
-    animation-delay: calc(attr(data-index number) * 0.3s);
-
-    h3 {
-      font-size: 1.5rem;
-      color: #2c3e50;
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-
-      .contact-item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    margin: 0 0 3rem;
+    font-size: 1.1rem;
+  }
+  
+  .contacts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 0 auto;
+    max-width: 800px;
+    
+    .contact-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr;
         gap: 1rem;
-
-        .contact-label {
-          color: #555;
-          font-weight: bold;
+      }
+    }
+    
+    .contact-info {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      border: 1px solid #f0e6e0;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.5s ease forwards;
+      animation-delay: calc(var(--index, 0) * 0.1s);
+      
+      &.active {
+        background: #fff9f5;
+        box-shadow: 0 4px 12px rgba(237, 108, 2, 0.1);
+        border-color: #ffd8b9;
+      }
+      
+      .contact-header {
+        display: flex;
+        align-items: center;
+        padding: 1.2rem 1.2rem;
+        cursor: pointer;
+        user-select: none;
+        
+        .emoji {
+          font-size: 1.8rem;
+          margin-right: 1rem;
+          min-width: 36px;
+          text-align: center;
+          filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
         }
-
-        .contact-link {
-          color: #2c3e50;
-          text-decoration: none;
-          transition: color 0.3s;
-
+        
+        .name {
+          flex: 1;
+          font-weight: 600;
+          color: #4e342e;
+          font-size: 1.1rem;
+        }
+        
+        .deceased {
+          color: #d32f2f;
+          font-size: 0.9rem;
+          margin: 0 0.5rem;
+          font-weight: 500;
+        }
+        
+        .toggle {
+          color: #a1887f;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+          padding: 0.5rem;
+          margin: -0.5rem -0.5rem -0.5rem 0.5rem;
+          
           &:hover {
-            color: #007bff;
+            color: #5d4037;
           }
         }
       }
+      
+      .phone {
+        display: block;
+        padding: 0 1.2rem 1.2rem 4.8rem;
+        color: #1976d2;
+        text-decoration: none;
+        font-size: 1rem;
+        word-break: break-all;
+        font-weight: 500;
+        transition: color 0.2s ease;
+        
+        &:hover {
+          color: #0d47a1;
+          text-decoration: underline;
+        }
+      }
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
     }
   }
-
+  
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -77,20 +135,17 @@
       transform: translateY(0);
     }
   }
-
+  
   @media (max-width: 768px) {
     padding: 2rem 1rem;
-
-    h2 {
-      font-size: 1.5rem;
+    
+    .contacts-title {
+      font-size: 1.8rem;
     }
-
-    .contact-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .contact-card {
-      padding: 1.5rem;
+    
+    .contacts-subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
     }
   }
 }
