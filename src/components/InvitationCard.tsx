@@ -16,6 +16,7 @@ const InvitationData: InvitationData = {
   time: '12:00',
   location: '서울 웨딩홀',
   address: '서울특별시 강남구',
+  dressCode: '정장/드레스',
 };
 
 export default function InvitationCard() {

@@ -1,9 +1,4 @@
-import { motion } from 'framer-motion';
 import './Gallery.scss';
-
-interface Photo {
-  id: number;
-}
 
 const photos = [
   '/gallery1.jpg',

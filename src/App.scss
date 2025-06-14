@@ -15,6 +15,13 @@
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Noto Sans KR', sans-serif;
   line-height: 1.6;
@@ -22,23 +29,53 @@ body {
   background-color: var(--background-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: font-size 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+  
+  &.large-text {
+    font-size: 1.15rem;
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.3em;
+    }
+    
+    p, li, span, div {
+      line-height: 1.8;
+    }
+  }
+}
+
+// Ensure the floating controls stay above other content
+.floating-controls {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .app {
   min-height: 100vh;
-  padding: 1rem;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 
   .invitation-container {
+    width: 100%;
     max-width: 100%;
-    margin: 0 auto;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 16px;
-    box-shadow: 0 4px 12px var(--shadow-color);
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
   }
 
   .section {
-    padding: 1rem 0;
+    padding: 0;
     border-bottom: 1px solid #eee;
 
     &:last-child {
@@ -111,21 +148,33 @@ body {
   }
 
   @media (min-width: 768px) {
-    padding: 2rem;
+    padding: 0;
 
     .invitation-container {
-      max-width: 1200px;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px var(--shadow-color);
+      max-width: 100%;
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
     }
 
     .section {
-      padding: 2rem 0;
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 2rem 1.5rem;
+      background: white;
+      position: relative;
+      box-sizing: border-box;
+      border-bottom: 1px solid #f0f0f0;
+      
+      &:last-child {
+        border-bottom: none;
+      }
     }
 
     .cover-section {
-      margin-bottom: 2rem;
+      margin-bottom: 0;
+      padding: 0;
 
       .music-icon {
         top: 1rem;

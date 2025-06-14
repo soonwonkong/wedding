@@ -1,10 +1,9 @@
 .couple-section {
-  padding: 3rem 2rem;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  max-width: 1000px;
+  padding: 3rem 1rem;
+  max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  text-align: center;
 
   h2 {
     text-align: center;
@@ -28,111 +27,64 @@
     }
   }
 
-  .couple-grid {
+  .portrait-area {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center;
     max-width: 800px;
-    margin: 0 auto;
-    position: relative;
+    margin: 0 auto 2rem;
+    padding: 0 20px;
   }
 
-  .couple-card {
+  .portrait-image {
     flex: 1;
-    max-width: 300px;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    padding: 2rem 1.5rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    position: relative;
     overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-    }
-
-    &.groom::before {
-      background: #3191e9;
-    }
-
-    &.bride::before {
-      background: #e94e77;
-    }
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
-    }
-  }
-
-  .couple-image {
-    width: 180px;
-    height: 220px;
-    border-radius: 15px;
-    overflow: hidden;
-    margin: 0 auto 1.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border: 3px solid #fff;
+    aspect-ratio: 1 / 1.35;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     
-    img {
+    .portrait {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    &:hover img {
-      transform: scale(1.05);
+      user-select: none;
+      pointer-events: none;
     }
   }
 
-  .couple-info {
+  .heart-icon {
+    margin: 0 1rem;
+    color: #ff6b8b;
+    font-size: 1.5rem;
+    animation: pulse 2s infinite;
+    flex-shrink: 0;
+  }
+
+  .couple-names {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 1.5rem;
+
+    .name {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .label {
-      display: inline-block;
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-right: 8px;
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 0.5rem;
       font-family: 'Noto Sans KR', sans-serif;
     }
-    
-    .groom {
-      color: #3191e9;
-    }
-    
-    .bride {
-      color: #e94e77;
-    }
-    
-    .name {
-      font-size: 1.5rem;
+
+    .name-text {
+      font-size: 1.4rem;
       font-weight: 600;
       color: #333;
       font-family: 'Noto Sans KR', sans-serif;
     }
-  }
-
-  .heart-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    color: #ff6b8b;
-    width: 60px;
-    height: 60px;
-    animation: pulse 2s infinite;
-    position: relative;
-    z-index: 1;
-    background: #fff;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
 
   @media (max-width: 768px) {
@@ -143,23 +95,26 @@
       margin-bottom: 2rem;
     }
 
-    .couple-grid {
-      flex-direction: column;
+    .portrait-area {
+      padding: 0 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .heart-icon {
+      margin: 0 0.5rem;
+      font-size: 1.25rem;
+    }
+
+    .couple-names {
       gap: 2rem;
-      max-width: 400px;
-    }
-    
-    .couple-card {
-      width: 100%;
-      max-width: 100%;
-      padding: 1.5rem 1rem;
-    }
-    
-    .heart-center {
-      margin: 0.5rem 0;
-      transform: rotate(90deg);
-      width: 50px;
-      height: 50px;
+      
+      .label {
+        font-size: 1.1rem;
+      }
+      
+      .name-text {
+        font-size: 1.3rem;
+      }
     }
   }
 }
