@@ -11,12 +11,12 @@ const CoupleInfo: React.FC = () => {
   const coupleMembers: CoupleMember[] = [
     {
       name: '신랑 이름',
-      image: '/images/groom.jpg',
+      image: 'images/groom.jpg',
       description: '신랑의 간단한 소개 문구'
     },
     {
       name: '신부 이름',
-      image: '/images/bride.jpg',
+      image: 'images/bride.jpg',
       description: '신부의 간단한 소개 문구'
     }
   ];

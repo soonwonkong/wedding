@@ -8,7 +8,7 @@ const MusicPlayer = () => {
 
   useEffect(() => {
     // Initialize audio element
-    audioRef.current = new Audio('/wedding-music.mp3');
+    audioRef.current = new Audio('wedding-music.mp3');
     audioRef.current.loop = true;
     
     // Cleanup on unmount
