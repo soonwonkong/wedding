@@ -13,7 +13,10 @@
       "Bash(git config:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(ls:*)",
+      "Bash(./node_modules/.bin/vite:*)",
+      "Bash(node:*)"
     ],
     "deny": []
   }

@@ -13,6 +13,6 @@ export default defineConfig(({ mode }) => {
       port: 3000,
     },
     // This is the base URL for GitHub Pages
-    base: process.env.NODE_ENV === 'production' ? '/wedding_ai/' : '/',
+    base: '/',
   };
 });
