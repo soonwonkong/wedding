@@ -1,12 +1,14 @@
 import './Gallery.scss';
 
-const photos = [
+// Gallery photos (commented out to prevent 404 errors)
+const photos: string[] = []; 
+/* [
   '/gallery1.jpg',
   '/gallery2.jpg',
   '/gallery3.jpg',
   '/gallery4.jpg',
   '/gallery5.jpg'
-];
+]; */
 
 export default function Gallery() {
   return (

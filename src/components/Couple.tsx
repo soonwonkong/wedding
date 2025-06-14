@@ -8,12 +8,12 @@ const Couple: React.FC = () => {
       <h2>신랑 &amp; 신부</h2>
       <div className="portrait-area" data-aos="fade-up">
         <div className="portrait-image">
-          <img 
+          {/* <img 
             src="images/couple1.png" 
             alt="신랑" 
             draggable="false"
             className="portrait"
-          />
+          /> */}
         </div>
         
         <div className="heart-icon">
@@ -21,12 +21,12 @@ const Couple: React.FC = () => {
         </div>
         
         <div className="portrait-image">
-          <img 
+          {/* <img 
             src="images/couple2.JPG" 
             alt="신부" 
             draggable="false"
             className="portrait"
-          />
+          /> */}
         </div>
       </div>
       

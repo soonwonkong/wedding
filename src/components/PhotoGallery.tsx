@@ -9,8 +9,9 @@ interface ImageType {
   title: string;
 }
 
-// Local photobook images
-const sampleImages: ImageType[] = Array.from({ length: 20 }, (_, i) => {
+// Local photobook images (commented out to prevent 404 errors)
+const sampleImages: ImageType[] = []; 
+/* Array.from({ length: 20 }, (_, i) => {
   const imageNumber = i + 1;
   return {
     id: imageNumber,
@@ -18,7 +19,7 @@ const sampleImages: ImageType[] = Array.from({ length: 20 }, (_, i) => {
     alt: `Wedding photo ${imageNumber}`,
     title: `Our Memory #${imageNumber}`
   };
-});
+}); */
 
 const PhotoGallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<ImageType | null>(null);
