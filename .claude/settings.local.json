@@ -8,7 +8,8 @@
       "Bash(NODE_ENV=production npx vite build)",
       "Bash(cp:*)",
       "Bash(mkdir:*)",
-      "Bash(true)"
+      "Bash(true)",
+      "Bash(touch:*)"
     ],
     "deny": []
   }
