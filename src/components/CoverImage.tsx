@@ -4,7 +4,7 @@ import './CoverImage.scss';
 const CoverImage: React.FC = () => {
   return (
     <div className="cover-image">
-      <img src="/images/cover.PNG" alt="Wedding Cover" className="cover-image__img" />
+      <img src="images/cover.PNG" alt="Wedding Cover" className="cover-image__img" />
       <div className="cover-image__overlay">
         <div className="cover-content">
           <h1>Wedding Invitation</h1>

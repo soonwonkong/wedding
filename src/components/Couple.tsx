@@ -9,7 +9,7 @@ const Couple: React.FC = () => {
       <div className="portrait-area" data-aos="fade-up">
         <div className="portrait-image">
           <img 
-            src="/images/couple1.png" 
+            src="images/couple1.png" 
             alt="신랑" 
             draggable="false"
             className="portrait"
@@ -22,7 +22,7 @@ const Couple: React.FC = () => {
         
         <div className="portrait-image">
           <img 
-            src="/images/couple2.JPG" 
+            src="images/couple2.JPG" 
             alt="신부" 
             draggable="false"
             className="portrait"

@@ -14,7 +14,7 @@ const sampleImages: ImageType[] = Array.from({ length: 20 }, (_, i) => {
   const imageNumber = i + 1;
   return {
     id: imageNumber,
-    url: `/images/photobook%20(${imageNumber}).jpg`,
+    url: `images/photobook%20(${imageNumber}).jpg`,
     alt: `Wedding photo ${imageNumber}`,
     title: `Our Memory #${imageNumber}`
   };
@@ -62,7 +62,7 @@ const PhotoGallery: React.FC = () => {
   // Handle image loading errors
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
     const target = e.target as HTMLImageElement;
-    target.src = '/placeholder.jpg';
+    target.src = 'placeholder.jpg';
   };
 
   return (
